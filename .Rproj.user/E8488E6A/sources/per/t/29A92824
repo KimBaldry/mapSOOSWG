@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1612493433162.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "480895929",
+    "id" : "29A92824",
+    "lastKnownWriteTime" : 1612493770,
+    "last_content_update" : 1612493770892,
+    "path" : "~/SOOS/mapSOOSWG/R/plot_WG_map.R",
+    "project_path" : "R/plot_WG_map.R",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0"
+    },
+    "relative_order" : 2,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
