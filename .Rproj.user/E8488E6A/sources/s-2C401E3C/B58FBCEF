@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1612497530317.000,
+    "created" : 1612500456211.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
     "hash" : "0",
-    "id" : "BF91118E",
-    "lastKnownWriteTime" : 1612497718,
-    "last_content_update" : 1612497718511,
+    "id" : "B58FBCEF",
+    "lastKnownWriteTime" : 1612500530,
+    "last_content_update" : 1612500530,
     "path" : "~/R_packages/mapSOOSWG/DESCRIPTION",
     "project_path" : "DESCRIPTION",
     "properties" : {
-        "cursorPosition" : "15,0",
+        "cursorPosition" : "12,15",
         "scrollLine" : "0"
     },
-    "relative_order" : 1,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "dcf"
