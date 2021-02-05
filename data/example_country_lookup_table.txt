@@ -1,0 +1,13 @@
+Country,ISO3_name
+UK,GBR
+USA,USA
+France,FRA
+Australia,AUS
+NZ,NZL
+Germany,DEU
+Japan,JPN
+Italy,ITA
+Korea,KOR
+China,CHN
+Sweden,SWE
+Belgium,BEL

@@ -1,0 +1,4 @@
+Working Group	Nations
+Ross Sea	UK; USA; France; Australia; NZ; Germany; Japan; USA; Australia; Italy; Korea; China; Australia; Korea; Australia
+Amundsen Sea	UK; Sweden; Korea; USA; Japan; France; Australia; Germany; UK; Australia; USA; Italy; Korea; UK; Australia
+Data Management Sub-Committee	Australia; NZ; Australia; USA; USA; USA; Germany; UK; Belgium; UK; Italy; Italy; Sweden
