@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1612493433162.000,
+    "created" : 1612495087481.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "480895929",
-    "id" : "29A92824",
-    "lastKnownWriteTime" : 1612493770,
-    "last_content_update" : 1612493770892,
+    "hash" : "3387175489",
+    "id" : "3D205AF6",
+    "lastKnownWriteTime" : 1612495583,
+    "last_content_update" : 1612495583034,
     "path" : "~/R_packages/mapSOOSWG/R/plot_WG_map.R",
     "project_path" : "R/plot_WG_map.R",
     "properties" : {
-        "cursorPosition" : "0,0",
-        "scrollLine" : "0"
+        "cursorPosition" : "25,9",
+        "scrollLine" : "23"
     },
-    "relative_order" : 2,
+    "relative_order" : 1,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"

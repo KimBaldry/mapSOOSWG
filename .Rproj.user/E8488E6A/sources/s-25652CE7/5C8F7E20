@@ -1,21 +1,21 @@
 {
     "collab_server" : "",
     "contents" : "",
-    "created" : 1612493435564.000,
+    "created" : 1612495541102.000,
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1307804557",
-    "id" : "A31B755",
-    "lastKnownWriteTime" : 1612493868,
-    "last_content_update" : 1612493868093,
+    "hash" : "3960143025",
+    "id" : "5C8F7E20",
+    "lastKnownWriteTime" : 1612495546,
+    "last_content_update" : 1612495546268,
     "path" : "~/R_packages/mapSOOSWG/R/save_map.R",
     "project_path" : "R/save_map.R",
     "properties" : {
-        "cursorPosition" : "6,2",
+        "cursorPosition" : "17,21",
         "scrollLine" : "0"
     },
-    "relative_order" : 3,
+    "relative_order" : 2,
     "source_on_save" : false,
     "source_window" : "",
     "type" : "r_source"
