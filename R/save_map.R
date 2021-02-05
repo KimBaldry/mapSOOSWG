@@ -9,6 +9,8 @@
 #' @param WG_name The name of the working group associated with the plot
 #' @param outdir The directory where the file should be saved
 #'
+#' @import ggplot2
+#'
 #' @export
 
 

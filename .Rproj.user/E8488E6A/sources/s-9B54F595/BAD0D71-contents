@@ -9,6 +9,14 @@
 #' @param countries list of country character vercors to be checked from the data file
 #' @param lookupfile the filepath of the lookup file
 #'
+#' @import ggplot2
+#' @import data.table
+#' @import broom
+#' @import rgeos
+#' @import rworldmap
+#' @import ggimage
+#' @import tidyverse
+#'
 #' @export
 
 check_country_names <- function(countries, lookupfile){

@@ -9,6 +9,14 @@
 #' @param WG_name Name of the WG to be plotted
 #' @param WG_countries Character vector of the ISO3 codes of WG member countries
 #'
+#' @import ggplot2
+#' @import data.table
+#' @import broom
+#' @import rgeos
+#' @import rworldmap
+#' @import ggimage
+#' @import tidyverse
+#'
 #' @export
 
 # for development/debugging
@@ -36,7 +44,7 @@ plot_WG_map <- function(WG_name, WG_countries){
   centroids_df <- as.data.frame(centroids)
   centroids_df = centroids_df[match(sub_Map$id[which(sub_Map$participation == 1)], rownames(centroids_df)),]
 
-  centroids_df$image  = file.path("./data","marker.png")
+  centroids_df$image  = system.file("marker.png", "mapSOOSWG")
   # This is the baseplot code for the map
   baseWO =  ggplot() +
     geom_polygon(data =map_data, aes(x = long, y = lat, group = group),fill = "#B0BEC5", colour = "#B0BEC5") +

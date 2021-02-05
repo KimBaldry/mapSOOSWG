@@ -8,6 +8,13 @@
 #' @return A ggplot object
 #' @param filepath The fullname of the file
 #' @param outdir The directory where you would like .png files saved
+#' @import ggplot2
+#' @import data.table
+#' @import broom
+#' @import rgeos
+#' @import rworldmap
+#' @import ggimage
+#' @import tidyverse
 #'
 #' @export
 

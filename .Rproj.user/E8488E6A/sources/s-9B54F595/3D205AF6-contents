@@ -9,6 +9,14 @@
 #' @param WG_name Name of the WG to be plotted
 #' @param WG_countries Character vector of the ISO3 codes of WG member countries
 #'
+#' @import ggplot2
+#' @import data.table
+#' @import broom
+#' @import rgeos
+#' @import rworldmap
+#' @import ggimage
+#' @import tidyverse
+#'
 #' @export
 
 # for development/debugging
