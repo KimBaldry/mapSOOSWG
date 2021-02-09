@@ -9,10 +9,12 @@ WG_maps(filename, outdir, lookupfile)
 \arguments{
 \item{outdir}{The directory where you would like .png files saved}
 
-\item{filepath}{The fullname of the file}
+\item{lookupfile}{The fullname of the lookup table file. This file must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name"}
+
+\item{filepath}{The fullname of the file. The file must contain the columns named "Acronym" (for the WG) and "Countries Represented"}
 }
 \value{
-A ggplot object
+It will let you know if the code worked!
 }
 \description{
 This script contains a function to create all SOOS WG maps from a file. The function: - acesses the file - applies data from rows of the file to 1. plot a WG map using plot_WG_map() and 2. save the file as a .png file using save_map() - outputs a message for each sucessfull map and when teh run is complete

@@ -16,7 +16,7 @@
 
 save_map <- function(plot, WG_name, outdir){
   p_name = file.path(outdir, gsub(" ","",paste(WG_name, "_membermap_",format(Sys.Date(), "%Y"),".png", sep = "")))
-  ggsave(p_name, plot =plot , width = 40, height = 26, units = "cm",  device = "png")
+  ggsave(p_name, plot =plot , width = 40, height = 25.8, units = "cm",  device = "png") # asp 1.550668
   print(paste(WG_name, "map has been saved as",basename(p_name), "in output directory!"))
 }
 

@@ -16,7 +16,6 @@
 #' @import rworldmap
 #' @import ggimage
 #' @import tidyverse
-#' @import raster
 #'
 #' @export
 
@@ -24,15 +23,15 @@
 # WG_name = WG_names[rw]
 # WG_countries = countries[[rw]]
 
-plot_WG_map <- function(WG_name, WG_countries){
+plot_WG_map_style5 <- function(WG_name, WG_countries){
 
   SOOScol = c("#00aeef", "#0073ae","#f1f3f4" ,"#c5c0bb", "#8dc63f")
   # Create a data frame that has an indicator for participating countries
   # This will allow us to colour countries
   countDF = data.frame(country = WG_countries,
-                        participation = rep(1, length(WG_countries)))
+                       participation = rep(1, length(WG_countries)))
   Map = joinCountryData2Map(countDF, joinCode = "ISO3",
-                             nameJoinColumn = "country")[-which(getMap()$ADMIN=="Antarctica"),]
+                            nameJoinColumn = "country")[-which(getMap()$ADMIN=="Antarctica"),]
   Map = spTransform(Map, "+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
   map_data = tidy(Map)
   sub_Map =Map@data[,c("ADMIN","ISO3","participation")]
@@ -51,8 +50,8 @@ plot_WG_map <- function(WG_name, WG_countries){
   centroids_df = as.data.frame(centroids)
   centroids_df = centroids_df[match(sub_Map$id[which(sub_Map$participation == 1)], rownames(centroids_df)),]
 
-  centroids_df$image  = file.path(.libPaths()[1],"mapSOOSWG", "marker.png")
-
+  centroids_df$image  = file.path(.libPaths()[1],"mapSOOSWG", "marker3.png")
+  centroids_df$image2  = file.path(.libPaths()[1],"mapSOOSWG", "marker_dot.png")
   # This is the baseplot code for the map
   baseWO =  ggplot() +
     geom_rect(aes(xmin = ext_wmap[1],xmax = ext_wmap[2], ymin = ext_wmap[3], ymax = ext_wmap[4]),size = 1, color = "black", fill = SOOScol[3])+
@@ -62,7 +61,8 @@ plot_WG_map <- function(WG_name, WG_countries){
     xlab("") +
     ylab("") +
     #geom_point(data = df, aes(x=x, y=y), col = colours[5], cex = 3) +
-    geom_image(data = centroids_df, aes(x = x, y=y, image = image), size = 0.02, asp =1.5)+ # add asp (aspect ratio width:height). Add nudge
+    geom_image(data = centroids_df, aes(x = x, y=y, image = image), size = 0.02, asp =1.5)+
+    geom_image(data = centroids_df, aes(x = x, y=y, image = image2), size = 0.02, asp =1.5)+
     geom_rect(aes(xmin = ext_wmap[1],xmax = ext_wmap[2], ymin = ext_wmap[3], ymax = ext_wmap[4]),size = 1, color = "black", fill = NA)+
 
     # Adds axes
