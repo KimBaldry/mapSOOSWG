@@ -16,6 +16,7 @@
 #' @import rworldmap
 #' @import ggimage
 #' @import tidyverse
+#' @import raster
 #'
 #' @export
 
