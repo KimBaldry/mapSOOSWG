@@ -17,6 +17,7 @@
 #' @import ggimage
 #' @import tidyverse
 #' @import raster
+#' @import sf
 #'
 #' @export
 
