@@ -66,7 +66,7 @@ plot_WG_map <- function(WG_name, WG_countries){
   # This is the baseplot code for the map
   baseWO =  ggplot() +
     # plot background box
-    geom_rect(aes(xmin = ext_wmap[1],xmax = ext_wmap[2], ymin = -32493690 + 18000000, ymax = ext_wmap[4]),size = 1, color = "black", fill = SOOScol[3])+
+    geom_rect(aes(xmin = ext_wmap[1],xmax = ext_wmap[2], ymin = -32493690 + 15000000, ymax = ext_wmap[4]),size = 1, color = "black", fill = SOOScol[3])+
     # plot whole world
     geom_polygon(data =map_data, aes(x = long, y = lat, group = group),fill = SOOScol[4], colour = SOOScol[4]) +
     # plot SOOS WG countries (single colour)
@@ -79,7 +79,7 @@ plot_WG_map <- function(WG_name, WG_countries){
     geom_image(data = centroids_df, aes(x = x, y=y, image = image), size = 0.02, asp =1.0)+
     geom_image(data = centroids_df, aes(x = x, y=y, image = image2), size = 0.02, asp =1.0)+
     # plot the box border
-    geom_rect(aes(xmin = ext_wmap[1],xmax = ext_wmap[2], ymin =  -32493690 + 18000000, ymax = ext_wmap[4]),size = 1, color = "black", fill = NA)+
+    geom_rect(aes(xmin = ext_wmap[1],xmax = ext_wmap[2], ymin =  -32493690 + 15000000, ymax = ext_wmap[4]),size = 1, color = "black", fill = NA)+
 
     # Change theme to remove axes and ticks
     theme(panel.background = element_blank(),legend.position = "none",
