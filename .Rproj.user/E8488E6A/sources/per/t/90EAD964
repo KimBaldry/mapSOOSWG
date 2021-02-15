@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1613339452565.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3181306282",
+    "id" : "90EAD964",
+    "lastKnownWriteTime" : 1613357677,
+    "last_content_update" : 1613357677486,
+    "path" : "~/R_packages/mapSOOSWG/R/category_maps.R",
+    "project_path" : "R/category_maps.R",
+    "properties" : {
+        "cursorPosition" : "0,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

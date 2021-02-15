@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1613344452763.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2604068918",
+    "id" : "9B99773A",
+    "lastKnownWriteTime" : 1613352108,
+    "last_content_update" : 1613352108089,
+    "path" : "~/R_packages/mapSOOSWG/R/country_categories.R",
+    "project_path" : "R/country_categories.R",
+    "properties" : {
+        "cursorPosition" : "1,0",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

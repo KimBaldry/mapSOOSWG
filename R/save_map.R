@@ -3,7 +3,7 @@
 #' @author Kimberlee Baldry
 #' @description This script contains a function to save a ggplot map using ggsave as a PNG file
 #'
-#' @note In development
+#' @note In development. Final draft.
 #'
 #' @param plot A ggplot object
 #' @param WG_name The name of the working group associated with the plot

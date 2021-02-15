@@ -3,7 +3,7 @@
 #' @author Kimberlee Baldry
 #' @description This function simply checks SOOS WG country data against the available lookup table. If the test is passed, it then converts SOOS country names into ISO3 codes for mapping.If the test is failed, a "Failed" message is returned.
 #'
-#' @note In development
+#' @note In development. Final draft.
 #'
 #' @return If check failed returns "Failed". If check sucessfull returns ISO3 country codes
 #' @param countries list of country character vercors to be checked from the data file
