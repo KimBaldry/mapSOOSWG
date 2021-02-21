@@ -5,7 +5,7 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "2995441142",
+    "hash" : "0",
     "id" : "65D042DA",
     "lastKnownWriteTime" : 1613344411,
     "last_content_update" : 1613344411,
@@ -13,7 +13,7 @@
     "project_path" : "R/check_country_names.R",
     "properties" : {
         "cursorPosition" : "30,0",
-        "scrollLine" : "23"
+        "scrollLine" : "0"
     },
     "relative_order" : 7,
     "source_on_save" : false,
