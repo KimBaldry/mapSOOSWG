@@ -1,13 +1,13 @@
 |Script | Status | TO DO Notes |
 |-------|--------|-------|
-| base_plot.R | First Draft | Adjust based on final style| 
+| base_plot.R | First Draft | - | 
 | category_maps.R | Editing | Will the categories always refer to something in airtable? Are you doing for each working group? Do we need a function to help create category lists? |
 | check_country_names.R | First Draft | - |
-| check_institution_names.R | Editing | check it works with SOOS geocode file. Check line 37 OK |
+| check_institution_names.R | First Draft | - |
 | country categories.R | Editing | - |
-| geocode_maps.R | Editing | need model file to do data treatment |
-| plot_geocode_map.R | Editing | line 33: create a df from geocodes |
-| plot_WG_map.R | First Draft | Edit based on chosen style|
+| geocode_maps.R | First Draft | - |
+| plot_geocode_map.R | Editing | line 33: create a df from geocodes, Extract lat/lon from geocode files, Add institution frequency functionality |
+| plot_WG_map.R | First Draft | Add country frequency functionality |
 | save_map.R | First Draft | Adjust plot field based on final design |
-| WG_maps.R | First Draft | change filename label |
+| WG_maps.R | First Draft | - |
 
