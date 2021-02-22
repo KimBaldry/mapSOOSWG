@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1613965954800.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "FE835D17",
+    "lastKnownWriteTime" : 1613973237,
+    "last_content_update" : 1613973237549,
+    "path" : "~/R_packages/mapSOOSWG/R/check_institution_names.R",
+    "project_path" : "R/check_institution_names.R",
+    "properties" : {
+        "cursorPosition" : "60,0",
+        "scrollLine" : "39",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 4,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

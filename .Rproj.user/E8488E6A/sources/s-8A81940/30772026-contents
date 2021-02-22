@@ -1,12 +1,6 @@
 
-base_plot <- function(){
-
-  ### plot options
-  background_colour = SOOScol[3]
-  world_map_colour = SOOScol[4]
-  border_colour = "black"
-  border_thickness = 1
-
+base_plot <- function(background_colour = SOOScol[3], world_map_colour = SOOScol[4],border_colour = "black",
+                      plot_border_thickness = 1){
 
   ### Define plot area
   # needs some consideration to change
@@ -24,12 +18,12 @@ base_plot <- function(){
     # plot background box
     geom_rect(aes(xmin = plot_area[1],xmax = plot_area[2], ymin = plot_area[3], ymax = plot_area[4]),size = 1, color = NA, fill = background_colour)+
     # plot whole world
-    geom_polygon(data =A, aes(x = long, y = lat, group = group),fill = world_map_colour, colour = world_map_colour) +
+    geom_polygon(data =wmap, aes(x = long, y = lat, group = group),fill = world_map_colour, colour = world_map_colour) +
     # plot antarctica. Antarctica is hard! This uses "ant" from the package data
     geom_sf(data = ant,fill = SOOScol[4], colour = SOOScol[4]) +
 
     # plot the box border
-    geom_rect(aes(xmin = plot_area[1],xmax = plot_area[2], ymin = plot_area[3], ymax = plot_area[4]),size = border_thickness, color = border_colour, fill = NA)+
+    geom_rect(aes(xmin = plot_area[1],xmax = plot_area[2], ymin = plot_area[3], ymax = plot_area[4]),size = plot_border_thickness, color = border_colour, fill = NA)+
     xlab("") +
     ylab("") +
     # Change theme to remove axes and ticks

@@ -6,9 +6,9 @@
 #' @note In development. Final Draft.
 #'
 #' @return It will let you know if the code worked!
-#' @param SOOS_WG_file The fullname of the file. The file must contain the columns named "Acronym" (for the WG) and "Countries Represented"
+#' @param SOOS_WG_data A data frame. The data frame must contain the columns named "Acronym" (for the WG) and "Countries.Represented". See "example_WG_data" for an example.
 #' @param outdir The directory where you would like .png files saved
-#' @param lookupfile The fullname of the lookup table file. This file must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name"
+#' @param country_names_data A data frame. The data frame must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name". See "example_country_data" for an example.
 #' @param ... see base_plot() and plot_WG_map() for further plot options (background_colour, world_map_colour, border_colour, plot_border_thickness)
 #'
 #' @import ggplot2
@@ -23,23 +23,13 @@
 #'
 #' @export
 
-# for development/debugging
-# maindir = "C:/Users/kabaldry/OneDrive - University of Tasmania/Documents/SOOS"
-# filename = file.path(maindir, "data", "SOOSWG_list_09022020.csv")
-# outdir = file.path(maindir, "output","style1")
-# lookupfile = file.path(maindir, "data", "country_lookup_table.txt")
+WG_maps <- function(SOOS_WG_data, outdir, country_names_data, ...){
 
-WG_maps <- function(SOOS_WG_file, outdir, lookupfile, ...){
-
-  # read the file
-  data = read.csv(SOOS_WG_file, header = T,  stringsAsFactors = F)
-  colnames(data) = gsub("ï..","",colnames(data)) # this is a bug that can occur from excel (yay excel)
-  print(paste(basename(SOOS_WG_file), "sucessfully opened"))
   # prepare data
-  WG_names = data$Acronym
-  countries = lapply(data$Countries.Represented, FUN = function(x){unlist(strsplit(x, split = "; "))})
+  WG_names = SOOS_WG_data$Acronym
+  countries = lapply(SOOS_WG_data$Countries.Represented, FUN = function(x){unlist(strsplit(x, split = "; "))})
   # check that all countries to be plotted appear in the country lookup table
-  check = check_country_names(countries, lookupfile)
+  check = check_country_names(countries, country_names_data)
   if(any(check == "Failed")){break}
   countries = check
   # loop through WG

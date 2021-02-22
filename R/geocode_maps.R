@@ -3,14 +3,16 @@
 #' @author Kimberlee Baldry
 #' @description This script contains a function to create all SOOS WG maps from a file. The function: - acesses the file - applies data from rows of the file to 1. plot a WG map using plot_WG_map() and 2. save the file as a .png file using save_map() - outputs a message for each sucessfull map and when teh run is complete
 #'
-#' @note In development. Editing.
+#' @note In development. First Draft.
 #'
 #' @return It will let you know if the code worked!
-#' @param filepath The fullname of the file. The file must contain the columns named "Acronym" (for the WG) and "Countries Represented" and "Institutions"
+#' @param SOOS_WG_data A data frame. The data frame must contain the columns named "Acronym" (for the WG), "Affiliations" and "Countries.Represented" (optional). See "example_WG_data" for an example.
 #' @param outdir The directory where you would like .png files saved
-#' @param lookupfile The fullname of the lookup table file. This file must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name"
-#' @param geocodefile The fullname of the geocode file. This file must contain 3 columns labeled "Institution" (what SOOS records the insitution as), "lat" and "lon"
-#' @param hilight_countries If true, also colour the member countries.
+#' @param country_names_data A data frame. The data frame must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name". See "example_country_data" for an example. This data frame is optional - do you want participating countries coloured?
+#' @param institution_names_data A data frame. The data frame must contain 4 columns labeled "Name" (what SOOS records the Affiliations as), "Type", "Latitude" and "Longitude". SSee example_institution_data for an example.
+#' @param add_countries If set to TRUE, participating countries will be coloured.
+#' @param ... see base_plot() and plot_WG_map() for further plot options (background_colour, world_map_colour, border_colour, plot_border_thickness)
+#'
 #' @import ggplot2
 #' @import data.table
 #' @import broom
@@ -23,41 +25,32 @@
 #'
 #' @export
 
-# for development/debugging
-# maindir = "C:/Users/kabaldry/OneDrive - University of Tasmania/Documents/SOOS"
-# filename = file.path(maindir, "data", "SOOSWG_list_09022020.csv")
-# outdir = file.path(maindir, "output","style1")
-# lookupfile = file.path(maindir, "data", "country_lookup_table.txt")
+geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, institution_names_data, hilight_countries = F){
 
-geocode_maps <- function(filename, outdir, lookupfile = NULL, geocodefile, hilight_countries = T){
+  # prepare data
+  WG_names = SOOS_WG_data$Acronym
 
-  ### read the files
-  data = read.csv(filename, header = T,  stringsAsFactors = F)
-  colnames(data) = gsub("ï..","",colnames(data)) # this is a bug that can occur from excel (yay excel)
-  print(paste(basename(filename), "sucessfully opened"))
-
-  geo_data = read.csv(geocodefile, header = T,  stringsAsFactors = F)
-  colnames(geo_data) = gsub("ï..","",colnames(geo_data)) # this is a bug that can occur from excel (yay excel)
-  print(paste(basename(geocodefile), "sucessfully opened"))
-
-
-  ### prepare data
-  WG_names = data$Acronym
-  # country data
+  ### country data
   if(hilight_countries){
-  countries = lapply(data$Countries.Represented, FUN = function(x){unlist(strsplit(x, split = "; "))})
-  # check that all countries to be plotted appear in the country lookup table
-  check = check_country_names(countries, lookupfile)
+      # prepare data
+      countries = lapply(SOOS_WG_data$Countries.Represented, FUN = function(x){unlist(strsplit(x, split = "; "))})
+      # check that all countries to be plotted appear in the country lookup table
+      check = check_country_names(countries, country_names_data)
+      if(any(check == "Failed")){break}
+      countries = check
+  }
+
+  ### institution data
+  # prepare data
+  inst = lapply(SOOS_WG_data$Affiliations, FUN = function(x){unlist(strsplit(x, split = "; "))})
+  # check that all institutions to be plotted appear in the lookup table
+  check = check_institution_names(inst, institution_names_data)
   if(any(check == "Failed")){break}
-  countries = check}
-
-  # institution data
-
 
   ### loop through WG and plot
   for(rw in 1:length(WG_names)){
     # make plot object
-    map = plot_geocode_map(WG_names[rw], countries[[rw]], institutions , hilight_countries = hilight_countries)
+    map = plot_geocode_map(WG_names[rw], inst[[rw]], institution_names_data = institution_names_data, hilight_countries = hilight_countries, ...)
     # save plot
     save_map(map,WG_names[rw], outdir)
   }

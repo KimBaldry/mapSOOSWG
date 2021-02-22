@@ -27,7 +27,9 @@
 # WG_name = WG_names[rw]
 # WG_countries = countries[[rw]]
 
-plot_geocode_map <- function(WG_name, WG_countries = NULL, WG_institutions, hilight_countries){
+plot_geocode_map <- function(WG_name, WG_countries = NULL, WG_institutions, hilight_countries, country_border_colour = , country_border_lwd = ,
+                             marker_fill = , marker_outline = ,
+                             marker_size = , marker_lwd = ){
 
   # create a data frame to plot markers
   plot_df =
