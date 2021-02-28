@@ -9,7 +9,7 @@ geocode_maps(
   outdir,
   country_names_data = NULL,
   institution_names_data,
-  hilight_countries = F,
+  add_countries = F,
   ...
 )
 }
@@ -22,9 +22,9 @@ geocode_maps(
 
 \item{institution_names_data}{A data frame. The data frame must contain 4 columns labeled "Name" (what SOOS records the Affiliations as), "Type", "Latitude" and "Longitude". SSee example_institution_data for an example.}
 
-\item{...}{see base_plot() and plot_WG_map() for further plot options (background_colour, world_map_colour, border_colour, plot_border_thickness)}
-
 \item{add_countries}{If set to TRUE, participating countries will be coloured.}
+
+\item{...}{see base_plot() and plot_WG_map() for further plot options (background_colour, world_map_colour, border_colour, plot_border_thickness)}
 }
 \value{
 It will let you know if the code worked!

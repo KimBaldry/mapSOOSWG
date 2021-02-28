@@ -25,13 +25,13 @@
 #'
 #' @export
 
-geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, institution_names_data, hilight_countries = F, ...){
+geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, institution_names_data, add_countries = F, ...){
 
   # prepare data
   WG_names = SOOS_WG_data$Acronym
 
   ### country data
-  if(hilight_countries){
+  if(add_countries){
       # prepare data
       countries = lapply(SOOS_WG_data$Countries.Represented, FUN = function(x){unlist(strsplit(x, split = "; "))})
       # check that all countries to be plotted appear in the country lookup table
@@ -51,7 +51,7 @@ geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, instit
   ### loop through WG and plot
   for(rw in 1:length(WG_names)){
     # make plot object
-    if(hilight_countries){ map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], WG_countries = countries[[rw]], hilight_countries = T, ...)}else{
+    if(add_countries){ map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], WG_countries = countries[[rw]], hilight_countries = T, ...)}else{
     map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], hilight_countries = F, ...)}
     # save plot
     save_map(map,WG_names[rw], outdir)
