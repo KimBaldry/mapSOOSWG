@@ -17,7 +17,7 @@ save_map(plot, WG_name, outdir)
 This script contains a function to save a ggplot map using ggsave as a PNG file
 }
 \note{
-In development
+In development. Final draft.
 }
 \author{
 Kimberlee Baldry

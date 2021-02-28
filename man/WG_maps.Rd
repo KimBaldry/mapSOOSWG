@@ -4,14 +4,16 @@
 \alias{WG_maps}
 \title{Create multiple SOOS Working Group Map from a file}
 \usage{
-WG_maps(filename, outdir, lookupfile)
+WG_maps(SOOS_WG_data, outdir, country_names_data, ...)
 }
 \arguments{
+\item{SOOS_WG_data}{A data frame. The data frame must contain the columns named "Acronym" (for the WG) and "Countries.Represented". See "example_WG_data" for an example.}
+
 \item{outdir}{The directory where you would like .png files saved}
 
-\item{lookupfile}{The fullname of the lookup table file. This file must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name"}
+\item{country_names_data}{A data frame. The data frame must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name". See "example_country_data" for an example.}
 
-\item{filepath}{The fullname of the file. The file must contain the columns named "Acronym" (for the WG) and "Countries Represented"}
+\item{...}{see base_plot() and plot_WG_map() for further plot options (background_colour, world_map_colour, border_colour, plot_border_thickness)}
 }
 \value{
 It will let you know if the code worked!
@@ -20,7 +22,7 @@ It will let you know if the code worked!
 This script contains a function to create all SOOS WG maps from a file. The function: - acesses the file - applies data from rows of the file to 1. plot a WG map using plot_WG_map() and 2. save the file as a .png file using save_map() - outputs a message for each sucessfull map and when teh run is complete
 }
 \note{
-In development
+In development. Final Draft.
 }
 \author{
 Kimberlee Baldry

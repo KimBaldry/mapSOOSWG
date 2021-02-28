@@ -46,11 +46,13 @@ geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, instit
   # check that all institutions to be plotted appear in the lookup table
   check = check_institution_names(inst, institution_names_data)
   if(any(check == "Failed")){break}
+  inst_data = check
 
   ### loop through WG and plot
   for(rw in 1:length(WG_names)){
     # make plot object
-    map = plot_geocode_map(WG_names[rw], inst[[rw]], institution_names_data = institution_names_data, hilight_countries = hilight_countries, ...)
+    if(hilight_countries){ map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], WG_countries = countries[[rw]], hilight_countries = T, ...)}else{
+    map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], hilight_countries = F, ...)}
     # save plot
     save_map(map,WG_names[rw], outdir)
   }
