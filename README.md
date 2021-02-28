@@ -6,7 +6,7 @@
 | check_institution_names.R | First Draft | - |
 | country categories.R | Editing | - |
 | geocode_maps.R | First Draft | - |
-| plot_geocode_map.R | Editing | line 33: create a df from geocodes, Extract lat/lon from geocode files, Add institution frequency functionality |
+| plot_geocode_map.R | First Draft |Add institution frequency functionality - have counts stored |
 | plot_WG_map.R | First Draft | Add country frequency functionality |
 | save_map.R | First Draft | Adjust plot field based on final design |
 | WG_maps.R | First Draft | - |
