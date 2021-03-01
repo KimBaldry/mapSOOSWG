@@ -1,13 +1,13 @@
-|Script | Status | TO DO Notes |
+|Script | Status | TO DO/ Notes |
 |-------|--------|-------|
-| base_plot.R | First Draft | - | 
-| category_maps.R | Editing | Will the categories always refer to something in airtable? Are you doing for each working group? Do we need a function to help create category lists? |
-| check_country_names.R | First Draft | - |
-| check_institution_names.R | First Draft | - |
-| country categories.R | Editing | - |
-| geocode_maps.R | First Draft | - |
-| plot_geocode_map.R | First Draft |Add institution frequency functionality - have counts stored |
-| plot_WG_map.R | First Draft | Add country frequency functionality |
-| save_map.R | First Draft | Adjust plot field based on final design |
-| WG_maps.R | First Draft | - |
+| base_plot.R | v.0.1 | - | 
+| category_maps.R | v.0.1 | Note the appearance of the legend still needs some fiddling. |
+| check_country_names.R | v.0.1 | Have added a "count" field that indicates the number of participants that have recorded the country |
+| check_institution_names.R | v.0.1 | Have added a "count" field that indicates the number of participants that have recorded the institution |
+| country categories.R | v.0.1 | - |
+| geocode_maps.R | v.0.1 | - |
+| plot_geocode_map.R | v.0.1 | - |
+| plot_WG_map.R | v.0.1 | - |
+| save_map.R | v.0.1 | - |
+| WG_maps.R | v.0.1 | - |
 
