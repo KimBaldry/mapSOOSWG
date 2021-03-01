@@ -38,7 +38,7 @@ geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, instit
       check = check_country_names(countries, country_names_data)
       if(any(check == "Failed")){break}
       countries = check
-  }
+  }else{countries = vector("list", length(WG_names))}
 
   ### institution data
   # prepare data
@@ -51,8 +51,7 @@ geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, instit
   ### loop through WG and plot
   for(rw in 1:length(WG_names)){
     # make plot object
-    if(add_countries){ map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], WG_countries = countries[[rw]], hilight_countries = T, ...)}else{
-    map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], hilight_countries = F, ...)}
+    map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], WG_countries = countries[[rw]], hilight_countries = add_countries, ...)
     # save plot
     save_map(map,WG_names[rw], outdir)
   }
