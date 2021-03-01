@@ -10,6 +10,7 @@ geocode_maps(
   country_names_data = NULL,
   institution_names_data,
   add_countries = F,
+  filter_types = "all",
   ...
 )
 }

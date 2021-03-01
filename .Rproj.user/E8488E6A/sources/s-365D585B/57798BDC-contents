@@ -52,8 +52,8 @@ geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, instit
   for(rw in 1:length(WG_names)){
     ## filter by TYPE
     if(filter_types != "all"){
-      only_plot = institution_names_data %>% filter(Type %in% filter_types)
-      inst_data[[rw]] = inst_data[[rw]] %>% filter(inst %in% only_plot$Name)
+      only_plot = institution_names_data %>% filter(type %in% filter_types)
+      inst_data[[rw]] %>% filter()
     }
 
     # make plot object

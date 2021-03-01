@@ -52,7 +52,7 @@ base_plot <- function(background_colour = SOOScol[3], world_map_colour = SOOScol
     xlab("") +
     ylab("") +
     # Change theme to remove axes and ticks
-    theme(panel.background = element_blank(),legend.position = "right",
+    theme(panel.background = element_blank(),legend.position = "none",
           panel.grid.minor = element_blank(),axis.ticks=element_blank(), axis.text = element_blank())
 
   return(baseWO)
