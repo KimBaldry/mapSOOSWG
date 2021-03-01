@@ -57,7 +57,7 @@ A ggplot object
 This script contains a function to draw a map for a single working group. Markers will be added to the centroids of participating countries.
 }
 \note{
-In development. Final Draft.
+v.0.1
 }
 \author{
 Kimberlee Baldry

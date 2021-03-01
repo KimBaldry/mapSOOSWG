@@ -19,7 +19,7 @@ country_categories <- function(cat_data_orig, cat_countries_ISO3, cols, WG_i){
 
   ### add category information
   cat_df = str_split(cat_data_orig[WG_i,(2:3)], ";")
-  cat_df = data.frame("ISO3" = cat_countries_ISO3[[WG_i]]$ISO3, "cat" = as.numeric(cat_df[[2]]), "count" = cat_countries_ISO3[[WG_i]]$count)
+  cat_df = data.frame("ISO3" = cat_countries_ISO3[[WG_i]], "cat" = as.numeric(cat_df[[2]]))
   n = length(unique(cat_df$cat))
   # order low-high
   cat_df = cat_df[order(cat_df$cat),]

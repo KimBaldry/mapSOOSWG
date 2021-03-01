@@ -63,7 +63,7 @@ A ggplot object
 This script contains a function to draw a map for a single working group with institution markers.
 }
 \note{
-In development. First Draft.
+v.0.1
 }
 \author{
 Kimberlee Baldry

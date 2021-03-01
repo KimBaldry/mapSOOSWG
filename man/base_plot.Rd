@@ -27,7 +27,7 @@ A ggplot object
 This script contains a function to draw a basemap for use in all plotting functions.
 }
 \note{
-In development. Final Draft.
+v.0.1
 }
 \author{
 Kimberlee Baldry

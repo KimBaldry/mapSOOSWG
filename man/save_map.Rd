@@ -4,7 +4,7 @@
 \alias{save_map}
 \title{Save a single SOOSmap}
 \usage{
-save_map(plot, WG_name, outdir)
+save_map(plot, WG_name, outdir, p_width = 35, p_height = 25.8)
 }
 \arguments{
 \item{plot}{A ggplot object}
@@ -12,12 +12,16 @@ save_map(plot, WG_name, outdir)
 \item{WG_name}{The name of the working group associated with the plot}
 
 \item{outdir}{The directory where the file should be saved}
+
+\item{p_width}{plot width in cm}
+
+\item{p_height}{plot height in cm}
 }
 \description{
 This script contains a function to save a ggplot map using ggsave as a PNG file
 }
 \note{
-In development. Final draft.
+v.0.1
 }
 \author{
 Kimberlee Baldry

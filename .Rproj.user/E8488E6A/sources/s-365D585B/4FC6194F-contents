@@ -3,7 +3,7 @@
 #' @author Kimberlee Baldry
 #' @description This function simply checks SOOS institution data against the available geocode table. If the test is passed, it then retrieves lat, lon coordinates for SOOS institution names as a data frame. If the test is failed, a "Failed" message is returned.
 #'
-#' @note v.0.1
+#' @note In development. First Draft.
 #'
 #' @return If check failed returns "Failed". If check sucessfull returns institution,lat,lon as a datafram
 #' @param institutions list of institution character vercors to be checked from the data file
@@ -44,7 +44,6 @@ check_institution_names <- function(institutions, institution_names_data){
     }
     # create a data frame for each WG with latitudes and longitude
     plot_df[[t]] = data.frame("inst" = inst_clean, "lat" = as.numeric(institution_names_data$Latitude[match(inst_clean, institution_names_data$Name)]), "lon" =  as.numeric(institution_names_data$Longitude[match(inst_clean, institution_names_data$Name)]))
-    # count number of participants and aggregate
     plot_df[[t]] = plot_df[[t]] %>% group_by(inst, lat, lon) %>% mutate(count = n())
     # replace institution list
     institutions[[t]] = plot_df[[t]]$inst

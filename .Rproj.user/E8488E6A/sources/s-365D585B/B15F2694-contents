@@ -36,7 +36,7 @@ WG_maps <- function(SOOS_WG_data, outdir, country_names_data, ...){
   # loop through WG
   for(rw in 1:length(WG_names)){
     # make plot object
-    map = plot_WG_map(WG_names[rw], countries[[rw]]$ISO3, ...)
+    map = plot_WG_map(WG_names[rw], countries[[rw]], ...)
     # save plot
     save_map(map,WG_names[rw], outdir)
   }

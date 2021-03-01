@@ -31,10 +31,10 @@ geocode_maps(
 It will let you know if the code worked!
 }
 \description{
-This script contains a function to create all SOOS WG maps from a file. The function: - acesses the file - applies data from rows of the file to 1. plot a WG map using plot_WG_map() and 2. save the file as a .png file using save_map() - outputs a message for each sucessfull map and when teh run is complete
+This script contains a function to create all SOOS WG maps from a file. The function: - acesses the file - applies data from rows of the file to 1. plot a WG map using plot_WG_map() and 2. save the file as a .png file using save_map() - outputs a message for each sucessfull map and when the run is complete
 }
 \note{
-In development. First Draft.
+v.0.1
 }
 \author{
 Kimberlee Baldry

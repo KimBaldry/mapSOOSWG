@@ -15,10 +15,10 @@ check_country_names(countries, country_names_data)
 If check failed returns "Failed". If check sucessfull returns ISO3 country codes
 }
 \description{
-This function simply checks SOOS WG country data against the available lookup table. If the test is passed, it then converts SOOS country names into ISO3 codes for mapping.If the test is failed, a "Failed" message is returned.
+This function simply checks SOOS WG country data against the available lookup table. If the test is passed, it then converts SOOS country names into ISO3 codes for mapping and returns a data frame with countries and the number of participants (count).If the test is failed, a "Failed" message is returned.
 }
 \note{
-In development. Final draft.
+v.0.1
 }
 \author{
 Kimberlee Baldry

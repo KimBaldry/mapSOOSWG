@@ -1,7 +1,7 @@
 #' @title Check and convert country names to ISO3
 #'
 #' @author Kimberlee Baldry
-#' @description This function simply checks SOOS WG country data against the available lookup table. If the test is passed, it then converts SOOS country names into ISO3 codes for mapping and returns a data frame with countries and the number of participants (count).If the test is failed, a "Failed" message is returned.
+#' @description This function simply checks SOOS WG country data against the available lookup table. If the test is passed, it then converts SOOS country names into ISO3 codes for mapping.If the test is failed, a "Failed" message is returned.
 #'
 #' @note v.0.1
 #'
@@ -30,20 +30,10 @@ check_country_names <- function(countries, country_names_data){
 
   # find countries that are not in the lookup table
   missing_countries = setdiff(unique_countries, country_names_data$Country)
-  # change all names in countries to ISO3 codes
-  ISO3 = lapply(countries, function(x){country_names_data$ISO3_name[match(x, country_names_data$Country)]})
-
   # if all of the countries are there
   if(length(missing_countries) == 0){
-    # count participants with ISO3 codes
-    for(t in 1:length(ISO3)){
-      plot_df = list()
-      plot_df[[t]] = data.frame("ISO3" = ISO3[[t]])
-      # count number of participants and aggregate
-      plot_df[[t]] = plot_df[[t]] %>% group_by(countries) %>% mutate(count = n())
-    }
-    # and return
-    check = plot_df
+    #change all names in countries to ISO3 codes and return
+    check = lapply(countries, function(x){country_names_data$ISO3_name[match(x, country_names_data$Country)]})
   }else{
     # give information about problems
     print("Error: Cannot produce plots!")

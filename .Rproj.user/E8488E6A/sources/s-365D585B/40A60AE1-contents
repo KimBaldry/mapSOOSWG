@@ -44,7 +44,6 @@ check_institution_names <- function(institutions, institution_names_data){
     }
     # create a data frame for each WG with latitudes and longitude
     plot_df[[t]] = data.frame("inst" = inst_clean, "lat" = as.numeric(institution_names_data$Latitude[match(inst_clean, institution_names_data$Name)]), "lon" =  as.numeric(institution_names_data$Longitude[match(inst_clean, institution_names_data$Name)]))
-    # count number of participants and aggregate
     plot_df[[t]] = plot_df[[t]] %>% group_by(inst, lat, lon) %>% mutate(count = n())
     # replace institution list
     institutions[[t]] = plot_df[[t]]$inst

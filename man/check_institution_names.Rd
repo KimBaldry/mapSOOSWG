@@ -18,7 +18,7 @@ If check failed returns "Failed". If check sucessfull returns institution,lat,lo
 This function simply checks SOOS institution data against the available geocode table. If the test is passed, it then retrieves lat, lon coordinates for SOOS institution names as a data frame. If the test is failed, a "Failed" message is returned.
 }
 \note{
-In development. First Draft.
+v.0.1
 }
 \author{
 Kimberlee Baldry
