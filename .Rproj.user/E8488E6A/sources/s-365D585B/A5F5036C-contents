@@ -79,7 +79,7 @@ plot_WG_map <- function(WG_name, WG_countries, participation_colour = SOOScol[1]
   # Add centroid markers and colour participating countries
   baseWG = baseWG +
     # plot SOOS WG countries (single colour)
-    geom_polygon(data =map_data[participation == 1], aes(x = long, y = lat, group = group, ISO3 = ISO3), fill = participation_colour, colour = country_border_colour, lwd = country_border_lwd)
+    geom_polygon(data = map_data[participation == 1], aes(x = long, y = lat, group = group, ISO3 = ISO3), fill = participation_colour, colour = country_border_colour, lwd = country_border_lwd)
 
   # plot the markers. We plot the markers as 2 layers so that the marker centers always appear at the top and are not hidden.
   # base marker
