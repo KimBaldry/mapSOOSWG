@@ -8,16 +8,14 @@ category_maps(
   SOOS_WG_data = NULL,
   outdir,
   category_data,
+  country_names_data,
   plot_type = "WG",
   category_colours = SOOScol,
   category_values = NULL,
   plot_legend = T,
   category_names = NULL,
   category_legend = NULL,
-  country_names_data = NULL,
   institution_names_data = NULL,
-  country_border_colour = SOOScol[9],
-  country_border_lwd = 1,
   ...
 )
 }
@@ -26,7 +24,9 @@ category_maps(
 
 \item{outdir}{The directory where you would like .png files saved}
 
-\item{category_data}{This file must contain 3 columns labeled "Acronym" (for the WG or plotname), "Countries" (A list of SOOS named countries separated by a ";") and "Categories" (a list of assigned categories for each SOOS country). See example file for details. Note the categories should be ordered from low-high and can be numbers or a caracter vector corresponding to names in the "Categories" column. The highest ranking category will be decide the country fill. Can also be SOOS_WG_data}
+\item{category_data}{This data frame must contain 3 columns labeled "Acronym" (for the WG or plotname), "Countries" (A list of SOOS named countries separated by a ";") and "Categories" (a list of assigned categories for each SOOS country). See example file for details. Note the categories should be ordered from low-high and can be numbers or a caracter vector corresponding to names in the "Categories" column. The highest ranking category will be decide the country fill. Can also be SOOS_WG_data}
+
+\item{country_names_data}{A data frame. The data frame must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name". See "example_country_data" for an example.}
 
 \item{plot_type}{Is the baseplot a WG plot (plot_type = "WG"), a geocode plot (plot_type = "geocode"), or are there no markers (plot_type = "category_only")?}
 
@@ -39,8 +39,6 @@ category_maps(
 \item{category_names}{The names you want to appear on the plot legend.}
 
 \item{category_legend}{The legend title.}
-
-\item{country_names_data}{A data frame. The data frame must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name". See "example_country_data" for an example.}
 
 \item{institution_names_data}{A data frame. The data frame must contain 4 columns labeled "Name" (what SOOS records the Affiliations as), "Type", "Latitude" and "Longitude". SSee example_institution_data for an example.}
 }

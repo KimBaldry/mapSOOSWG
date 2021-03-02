@@ -12,7 +12,7 @@ check_institution_names(institutions, institution_names_data)
 \item{institution_names_data}{A data frame. The data frame must contain 4 columns labeled "Name" (what SOOS records the Affiliations as), "Type", "Latitude" and "Longitude". SSee example_institution_data for an example.#'}
 }
 \value{
-If check failed returns "Failed". If check sucessfull returns institution,lat,lon as a datafram
+If check failed returns "Failed". If check sucessfull returns institution,lat,lon and a participation count as a dataframe
 }
 \description{
 This function simply checks SOOS institution data against the available geocode table. If the test is passed, it then retrieves lat, lon coordinates for SOOS institution names as a data frame. If the test is failed, a "Failed" message is returned.

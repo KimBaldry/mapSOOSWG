@@ -12,7 +12,7 @@ check_country_names(countries, country_names_data)
 \item{country_names_data}{A data frame. The data frame must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name". See "example_country_data" for an example.}
 }
 \value{
-If check failed returns "Failed". If check sucessfull returns ISO3 country codes
+If check failed returns "Failed". If check sucessfull returns a list of data frames with ISO3 country codes and participation numbers.
 }
 \description{
 This function simply checks SOOS WG country data against the available lookup table. If the test is passed, it then converts SOOS country names into ISO3 codes for mapping and returns a data frame with countries and the number of participants (count).If the test is failed, a "Failed" message is returned.

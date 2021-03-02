@@ -7,7 +7,7 @@
 country_categories(cat_data_orig, cat_countries_ISO3, cols, WG_i)
 }
 \arguments{
-\item{cat_data_orig}{same as category_data in category_maps(). This file must contain 3 columns labeled "Acronym" (for the WG or plotname), "Countries" (A list of SOOS named countries separated by a ";") and "Categories" (a list of assigned categories for each SOOS country). See example file for details. Note the categories should be ordered from low-high and can be numbers or a caracter vector corresponding to names in the "Categories" column. The highest ranking category will be decide the country fill.}
+\item{cat_data_orig}{same as category_data in category_maps(). This data frame must contain 3 columns labeled "Acronym" (for the WG or plotname), "Countries" (A list of SOOS named countries separated by a ";") and "Categories" (a list of assigned categories for each SOOS country). See example file for details. Note the categories should be ordered from low-high and can be numbers or a caracter vector corresponding to names in the "Categories" column. The highest ranking category will be decide the country fill.}
 
 \item{cat_countries_ISO3}{ISO3 codes returned by passing cat_data_original through check_country_names().}
 
