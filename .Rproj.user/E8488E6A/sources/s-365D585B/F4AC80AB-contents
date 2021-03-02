@@ -33,7 +33,8 @@
 
 category_maps <- function(SOOS_WG_data = NULL, outdir, category_data, country_names_data, plot_type = "WG", category_colours = SOOScol,
                           category_values = NULL, plot_legend = T, category_names = NULL, category_legend = NULL,
-                          institution_names_data = NULL,...){
+                          institution_names_data = NULL,
+                          country_border_colour = SOOScol[9], country_border_lwd = 1,...){
 
   ### Convert category names to numbers
   if(!is.null(category_values)){
