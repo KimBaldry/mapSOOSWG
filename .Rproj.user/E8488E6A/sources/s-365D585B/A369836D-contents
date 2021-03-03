@@ -1,0 +1,65 @@
+#' @title Create multiple SOOS Geocoded Maps from a file
+#'
+#' @author Kimberlee Baldry
+#' @description This script contains a function to create all SOOS WG maps from a file. The function: - acesses the file - applies data from rows of the file to 1. plot a WG map using plot_WG_map() and 2. save the file as a .png file using save_map() - outputs a message for each sucessfull map and when the run is complete
+#'
+#' @note v.0.1
+#'
+#' @return It will let you know if the code worked!
+#' @param SOOS_WG_data A data frame. The data frame must contain the columns named "Acronym" (for the WG), "Affiliations" and "Countries.Represented" (optional). See "example_WG_data" for an example.
+#' @param outdir The directory where you would like .png files saved
+#' @param country_names_data A data frame. The data frame must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name". See "example_country_data" for an example. This data frame is optional - do you want participating countries coloured?
+#' @param institution_names_data A data frame. The data frame must contain 4 columns labeled "Name" (what SOOS records the Affiliations as), "Type", "Latitude" and "Longitude". SSee example_institution_data for an example.
+#' @param add_countries If set to TRUE, participating countries will be coloured.
+#' @param ... see base_plot() and plot_WG_map() for further plot options (background_colour, world_map_colour, border_colour, plot_border_thickness)
+#'
+#' @import ggplot2
+#' @import data.table
+#' @import broom
+#' @import rgeos
+#' @import rworldmap
+#' @import ggimage
+#' @import tidyverse
+#' @import raster
+#' @import sf
+#'
+#' @export
+
+geocode_maps <- function(SOOS_WG_data, outdir, country_names_data = NULL, institution_names_data, add_countries = F, filter_types = "all", ...){
+
+  # prepare data
+  WG_names = SOOS_WG_data$Acronym
+
+  ### country data
+  if(add_countries){
+      # prepare data
+      countries = lapply(SOOS_WG_data$Countries.Represented, FUN = function(x){unlist(strsplit(x, split = "; "))})
+      # check that all countries to be plotted appear in the country lookup table
+      check = check_country_names(countries, country_names_data)
+      if(any(check == "Failed")){break}
+      countries = check
+  }else{countries = vector("list", length(WG_names))}
+
+  ### institution data
+  # prepare data
+  inst = lapply(SOOS_WG_data$Affiliations, FUN = function(x){unlist(strsplit(x, split = "; "))})
+  # check that all institutions to be plotted appear in the lookup table
+  check = check_institution_names(inst, institution_names_data)
+  if(any(check == "Failed")){break}
+  inst_data = check
+
+  ### loop through WG and plot
+  for(rw in 1:length(WG_names)){
+    ## filter by TYPE
+    if(filter_types != "all"){
+      only_plot = institution_names_data %>% filter(Type %in% filter_types)
+      inst_data[[rw]] = inst_data[[rw]] %>% filter(inst %in% only_plot$Name)
+    }
+
+    # make plot object
+    map = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], WG_countries = countries[[rw]], hilight_countries = add_countries, ...)
+    # save plot
+    save_map(map,WG_names[rw], outdir)
+  }
+  print("Sucess! All maps were created")
+}
