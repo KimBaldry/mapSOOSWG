@@ -50,7 +50,7 @@ plot_WG_map <- function(WG_name, WG_countries, participation_colour = SOOScol[1]
   countDF = data.frame(country = WG_countries,
                         participation = rep(1, length(WG_countries)))
   Map = joinCountryData2Map(countDF, joinCode = "ISO3",
-                             nameJoinColumn = "ISO3")[-which(getMap()$ADMIN=="Antarctica"),]
+                             nameJoinColumn = "country")[-which(getMap()$ADMIN=="Antarctica"),]
   # Transofrm to Mercator projection
   Map = spTransform(Map, "+proj=merc +lon_0=0 +k=1 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs")
   map_data = tidy(Map)
