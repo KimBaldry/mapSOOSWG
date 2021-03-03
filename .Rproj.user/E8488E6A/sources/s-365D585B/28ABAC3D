@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1614750722970.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "28ABAC3D",
+    "lastKnownWriteTime" : 1614638481,
+    "last_content_update" : 1614638481,
+    "path" : "~/R_packages/mapSOOSWG/R/geocode_maps.R",
+    "project_path" : "R/geocode_maps.R",
+    "properties" : {
+        "cursorPosition" : "45,0",
+        "scrollLine" : "37",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
