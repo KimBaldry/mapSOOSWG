@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "0",
+    "hash" : "1747820694",
     "id" : "B58FBCEF",
-    "lastKnownWriteTime" : 1614751358,
-    "last_content_update" : 1614751358648,
+    "lastKnownWriteTime" : 1614751996,
+    "last_content_update" : 1614751996492,
     "path" : "~/R_packages/mapSOOSWG/DESCRIPTION",
     "project_path" : "DESCRIPTION",
     "properties" : {
-        "cursorPosition" : "6,19",
+        "cursorPosition" : "8,107",
         "scrollLine" : "0"
     },
     "relative_order" : 2,
