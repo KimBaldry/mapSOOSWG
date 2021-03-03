@@ -9,7 +9,7 @@ category_maps(
   outdir,
   category_data,
   country_names_data,
-  plot_type = "WG",
+  plot_type = "category_only",
   category_colours = SOOScol,
   category_values = NULL,
   plot_legend = T,
