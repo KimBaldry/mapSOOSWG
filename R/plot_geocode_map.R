@@ -47,7 +47,7 @@ plot_geocode_map <- function(WG_name, WG_institutions, hilight_countries, WG_cou
     # This will allow us to colour countries
     # Note we remove Antarctica because it wont transform niceley
     countDF = data.frame(country = WG_countries$ISO3,
-                         participation = rep(1, length(WG_countries)))
+                         participation = rep(1, nrow(WG_countries)))
     Map = joinCountryData2Map(countDF, joinCode = "ISO3",
                               nameJoinColumn = "country")[-which(getMap()$ADMIN=="Antarctica"),]
     # Transofrm to Mercator projection

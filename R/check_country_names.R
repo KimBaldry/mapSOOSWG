@@ -31,7 +31,13 @@ check_country_names <- function(countries, country_names_data){
   # find countries that are not in the lookup table
   missing_countries = setdiff(unique_countries, country_names_data$Country)
   # change all names in countries to ISO3 codes
-  ISO3 = lapply(trimws(countries), function(x){country_names_data$ISO3_name[match(x, country_names_data$Country)]})
+  countries_ed = countries
+  for(e in 1:length(countries)){
+    countries_ed[[e]] = unlist(strsplit(unlist(countries_ed[[e]]),split = ","))
+    countries_ed[[e]] = trimws(countries_ed[[e]])
+    #countries_ed[[e]] = gsub("United States ", "United States", countries_ed[[e]])
+  }
+  ISO3 = lapply(countries_ed, function(x){country_names_data$ISO3_name[match(x, country_names_data$Country)]})
 
   # if all of the countries are there
   if(length(missing_countries) == 0){
