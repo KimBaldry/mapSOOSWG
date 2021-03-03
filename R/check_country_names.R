@@ -36,8 +36,8 @@ check_country_names <- function(countries, country_names_data){
   # if all of the countries are there
   if(length(missing_countries) == 0){
     # count participants with ISO3 codes
+    plot_df = list()
     for(t in 1:length(ISO3)){
-      plot_df = list()
       plot_df[[t]] = data.frame("ISO3" = ISO3[[t]])
       # count number of participants and aggregate
       plot_df[[t]] = plot_df[[t]] %>% group_by(ISO3) %>% mutate(count = n())
