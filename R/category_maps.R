@@ -104,7 +104,7 @@ category_maps <- function(SOOS_WG_data = NULL, outdir, category_data, country_na
 
     if(plot_type == "geocode"){
       # use plot_geocode_map. Don't hilight contries, they will just be re-filled anyway. Makes it a little faster.
-      baseCAT = plot_geocode_map(WG_names[rw], countries[[rw]], hilight_countries = F)
+      baseCAT = plot_geocode_map(WG_name = WG_names[rw], WG_institutions = inst_data[[rw]], WG_countries = cat_countries[[rw]], hilight_countries = F)
     }
 
 
