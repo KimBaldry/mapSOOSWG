@@ -20,7 +20,7 @@ category_maps(
 )
 }
 \arguments{
-\item{SOOS_WG_data}{A data frame. The data frame must contain the columns named "Acronym" (for the WG) and "Countries.Represented". See "example_WG_data" for an example. Needed for plot_type "WG" and "geocode".}
+\item{SOOS_WG_data}{A data frame. The data frame must contain the columns named "Acronym" (for the WG) and "Countries.Represented". See "example_WG_data" for an example. Needed for plot_type "WG" and "geocode". MUST have the same ordered rows as "category_data" !!}
 
 \item{outdir}{The directory where you would like .png files saved}
 

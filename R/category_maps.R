@@ -6,7 +6,7 @@
 #' @note v.0.1. Note the appearance of the legend still needs some fiddling.
 #'
 #' @return It will let you know if the code worked!
-#' @param SOOS_WG_data A data frame. The data frame must contain the columns named "Acronym" (for the WG) and "Countries.Represented". See "example_WG_data" for an example. Needed for plot_type "WG" and "geocode".
+#' @param SOOS_WG_data A data frame. The data frame must contain the columns named "Acronym" (for the WG) and "Countries.Represented". See "example_WG_data" for an example. Needed for plot_type "WG" and "geocode". MUST have the same ordered rows as "category_data" !!
 #' @param outdir The directory where you would like .png files saved
 #' @param category_data This data frame must contain 3 columns labeled "Acronym" (for the WG or plotname), "Countries" (A list of SOOS named countries separated by a ";") and "Categories" (a list of assigned categories for each SOOS country). See example file for details. Note the categories should be ordered from low-high and can be numbers or a caracter vector corresponding to names in the "Categories" column. The highest ranking category will be decide the country fill. Can also be SOOS_WG_data
 #' @param country_names_data A data frame. The data frame must contain 2 columns labeled "Country" (what SOOS records the country as) and "ISO3_name". See "example_country_data" for an example.
