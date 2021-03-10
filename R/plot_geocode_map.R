@@ -9,7 +9,7 @@
 #' @param WG_name Name of the WG to be plotted
 #' @param WG_institutions Dataframe of the institution geocodes to be plotted with column names as "Institution", "lat" and "lon"
 #' @param hilight_countries If true, also colour the member countries.
-#' @param WG_countries Character vector of the ISO3 codes of WG member countries
+#' @param WG_countries Data frame including ISO3 codes of WG member countries. Output from check_country_names()
 #' @param participation_colour The fill colour of the participating countries.
 #' @param country_border_colour The colour of the participating country borders.
 #' @param country_border_lwd The width of the participating country borders.

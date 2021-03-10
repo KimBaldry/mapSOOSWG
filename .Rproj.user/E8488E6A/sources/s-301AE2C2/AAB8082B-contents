@@ -3,13 +3,13 @@
 #' @author Kimberlee Baldry
 #' @description This script contains a function to draw a map for a single working group with institution markers.
 #'
-#' @note In development. First Draft.
+#' @note v.0.1
 #'
 #' @return A ggplot object
 #' @param WG_name Name of the WG to be plotted
 #' @param WG_institutions Dataframe of the institution geocodes to be plotted with column names as "Institution", "lat" and "lon"
 #' @param hilight_countries If true, also colour the member countries.
-#' @param WG_countries Character vector of the ISO3 codes of WG member countries
+#' @param WG_countries Data frame including ISO3 codes of WG member countries. Output from check_country_names()
 #' @param participation_colour The fill colour of the participating countries.
 #' @param country_border_colour The colour of the participating country borders.
 #' @param country_border_lwd The width of the participating country borders.
@@ -35,9 +35,6 @@
 #'
 #' @export
 
-# for development/debugging
-# WG_name = WG_names[rw]
-# WG_countries = countries[[rw]]
 
 plot_geocode_map <- function(WG_name, WG_institutions, hilight_countries, WG_countries = NULL, participation_colour = SOOScol[1], country_border_colour = SOOScol[9], country_border_lwd = 1,
                              marker_colour = NULL, marker_dot_colour = NULL,
@@ -49,8 +46,8 @@ plot_geocode_map <- function(WG_name, WG_institutions, hilight_countries, WG_cou
     ### Create a map data frame that has an indicator for participating countries
     # This will allow us to colour countries
     # Note we remove Antarctica because it wont transform niceley
-    countDF = data.frame(country = WG_countries,
-                         participation = rep(1, length(WG_countries)))
+    countDF = data.frame(country = WG_countries$ISO3,
+                         participation = rep(1, nrow(WG_countries)))
     Map = joinCountryData2Map(countDF, joinCode = "ISO3",
                               nameJoinColumn = "country")[-which(getMap()$ADMIN=="Antarctica"),]
     # Transofrm to Mercator projection
@@ -62,7 +59,7 @@ plot_geocode_map <- function(WG_name, WG_institutions, hilight_countries, WG_cou
     map_data = data.table(left_join(map_data, sub_Map))
   }
 
-  # reproject institution data
+  ### reproject institution data
   in_df = WG_institutions
   coordinates(in_df) =  ~lon+lat
   projection(in_df) = "+proj=longlat +datum=WGS84"
@@ -85,20 +82,18 @@ plot_geocode_map <- function(WG_name, WG_institutions, hilight_countries, WG_cou
   }
 
   # plot the markers. We plot the markers as 2 layers so that the marker centers always appear at the top and are not hidden.
-  # base marker
+  # add base marker
   if(add_marker){
     if(is.null(marker_colour)){
       baseIN = baseIN + geom_image(data = in_df_merc, aes(x = lon, y=lat, image = image1), size = 0.01 * marker_size, asp = marker_asp)
     }else{baseIN = baseIN + geom_image(data = in_df_merc, aes(x = lon, y=lat, image = image1), size = 0.01 * marker_size, asp = marker_asp, colour = marker_colour)}
   }
-  # dot
+  # add dot
   if(add_marker_dot){
     if(is.null(marker_dot_colour)){
       baseIN = baseIN + geom_image(data = in_df_merc, aes(x = lon, y=lat, image = image2), size = 0.01 * marker_size, asp = marker_asp)
     }else{baseIN = baseIN + geom_image(data = in_df_merc, aes(x = lon, y=lat, image = image2), size = 0.01 * marker_size, asp = marker_asp, colour = marker_dot_colour)}
   }
-
-
 
   return(baseIN)
 
